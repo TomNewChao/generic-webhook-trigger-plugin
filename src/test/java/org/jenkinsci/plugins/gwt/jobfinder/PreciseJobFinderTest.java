@@ -34,7 +34,7 @@ public class PreciseJobFinderTest {
     final Map<String, String> postMap =
         flattenJson.flattenJson(postContentKey, regexFilter, resolved);
     final List<String> fullNameList =
-        new JobFinderConfig(jobFinderConfigPathItemList).getFullNameList(postMap);
+        new JobFinderConfig(true, jobFinderConfigPathItemList).getFullNameList(postMap);
     assertThat(fullNameList).isNotEmpty();
     for (final String fullName : fullNameList) {
       assertEquals(expectedPath, fullName);

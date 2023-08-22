@@ -20,10 +20,14 @@ public class JobFinderConfig extends GlobalConfiguration implements Serializable
     return GlobalConfiguration.all().get(JobFinderConfig.class);
   }
 
+  private boolean enabled;
+
   private List<JobFinderConfigPathItem> jobFinderConfigPathItemList = new ArrayList<>();
 
   @VisibleForTesting
-  public JobFinderConfig(final List<JobFinderConfigPathItem> jobFinderConfigPathItemList) {
+  public JobFinderConfig(
+      final boolean enabled, final List<JobFinderConfigPathItem> jobFinderConfigPathItemList) {
+    this.enabled = enabled;
     this.jobFinderConfigPathItemList = jobFinderConfigPathItemList;
   }
 
@@ -38,8 +42,13 @@ public class JobFinderConfig extends GlobalConfiguration implements Serializable
     return true;
   }
 
+  @DataBoundSetter
+  public void setEnabled(final boolean enabled) {
+    this.enabled = enabled;
+  }
+
   public boolean isEnabled() {
-    return !this.jobFinderConfigPathItemList.isEmpty();
+    return enabled;
   }
 
   @DataBoundSetter
