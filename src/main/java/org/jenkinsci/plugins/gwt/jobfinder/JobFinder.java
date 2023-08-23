@@ -44,7 +44,7 @@ public final class JobFinder {
     List<FoundJob> foundJobs;
     if (JobFinderConfig.get().isEnabled()) {
       foundJobs = findJobWithFullName(givenToken, postContent);
-      if (foundJobs.isEmpty()){
+      if (foundJobs.isEmpty()) {
         foundJobs = findAllJobsWithTrigger(givenToken);
       }
     } else {
