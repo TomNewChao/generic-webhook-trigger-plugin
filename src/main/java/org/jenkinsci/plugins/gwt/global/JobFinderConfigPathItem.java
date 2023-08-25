@@ -10,7 +10,7 @@ import org.kohsuke.stapler.DataBoundSetter;
 
 public class JobFinderConfigPathItem extends AbstractDescribableImpl<JobFinderConfigPathItem>
     implements Serializable {
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 856445012721124920L;
   private String path;
 
   @DataBoundConstructor

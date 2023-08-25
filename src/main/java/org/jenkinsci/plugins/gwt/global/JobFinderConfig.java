@@ -14,7 +14,7 @@ import org.kohsuke.stapler.StaplerRequest;
 
 @Extension
 public class JobFinderConfig extends GlobalConfiguration implements Serializable {
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 8456606030707477912L;
 
   public static JobFinderConfig get() {
     return GlobalConfiguration.all().get(JobFinderConfig.class);
